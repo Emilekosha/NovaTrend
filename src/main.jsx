@@ -1,3 +1,4 @@
+// src/main.jsx
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
@@ -9,7 +10,10 @@ import { CompareProvider } from './context/CompareContext.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+    <BrowserRouter
+      basename={import.meta.env.BASE_URL}                         // ⬅️ important pour GitHub Pages
+      future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+    >
       <CartProvider>
         <WishlistProvider>
           <CompareProvider>

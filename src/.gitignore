@@ -1,0 +1,15 @@
+# Dépendances / builds
+node_modules/
+dist/
+.vite/
+.cache/
+*.log
+
+# OS / éditeur
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Env
+.env
+.env.*
