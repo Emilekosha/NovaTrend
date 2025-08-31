@@ -8,10 +8,13 @@ import { CartProvider } from './context/CartContext.jsx'
 import { WishlistProvider } from './context/WishlistContext.jsx'
 import { CompareProvider } from './context/CompareContext.jsx'
 
+// ➜ retire le / final pour que /NovaTrend et /NovaTrend/ fonctionnent
+const BASENAME = (import.meta.env.BASE_URL || '/').replace(/\/+$/, '')
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter
-      basename={import.meta.env.BASE_URL}                         // ⬅️ important pour GitHub Pages
+      basename={BASENAME}
       future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
     >
       <CartProvider>
