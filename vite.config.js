@@ -1,8 +1,8 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
+// vite.config.js
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
-// ⚠️ remplace 'REPO' par le nom exact du dépôt GitHub
 export default defineConfig({
   plugins: [react()],
-  base: "/NovaTrend/",
-});
+  base: '/NovaTrend/', // ← respecte la casse et le slash final
+})
