@@ -29,7 +29,7 @@ export function createOrder(payload) {
     ...payload, // {items, amount, currency, method, customer, note, paymentRef...}
   };
   const all = load();
-  all.unshift(order); // plus récent en premier
+  all.unshift(order); // plus rÃ©cent en premier
   save(all);
   return order;
 }
@@ -46,3 +46,4 @@ export function updateOrder(id, patch) {
 export function clearOrders() {
   localStorage.removeItem(ORDERS_KEY);
 }
+

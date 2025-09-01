@@ -4,7 +4,7 @@ export default function Contact() {
   function onSubmit(e) {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
-    alert(`Merci ${form.get("name") || "à vous"} ! Nous répondons sous 24h.`);
+    alert(`Merci ${form.get("name") || "Ã  vous"} ! Nous rÃ©pondons sous 24h.`);
     e.currentTarget.reset();
   }
 
@@ -35,7 +35,7 @@ export default function Contact() {
             </h1>
             <p className="mt-2 text-gray-600 max-w-prose">
               Une question sur une commande, un produit, un retour ? Remplissez le
-              formulaire, notre équipe vous répond rapidement.
+              formulaire, notre Ã©quipe vous rÃ©pond rapidement.
             </p>
 
             <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -50,22 +50,22 @@ export default function Contact() {
                 href="tel:+33123456789"
                 className="rounded-2xl border border-orange-200 bg-orange-50 px-4 py-3 hover:bg-orange-100 transition"
               >
-                <div className="text-sm font-semibold text-orange-800">Téléphone</div>
+                <div className="text-sm font-semibold text-orange-800">TÃ©lÃ©phone</div>
                 <div className="text-gray-700">01 23 45 67 89</div>
               </a>
             </div>
 
             <div className="mt-6 text-sm text-gray-600">
               <div className="font-semibold text-gray-800">Horaires</div>
-              <div>Lun–Ven : 9h–18h · Sam : 10h–16h</div>
+              <div>Lunâ€“Ven : 9hâ€“18h Â· Sam : 10hâ€“16h</div>
             </div>
           </aside>
 
-          {/* ===== Colonne droite : formulaire + réseaux cliquables ===== */}
+          {/* ===== Colonne droite : formulaire + rÃ©seaux cliquables ===== */}
           <section>
             <div className="rounded-2xl border border-sky-100 bg-white p-4 sm:p-6 lg:p-7 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.15)]">
               <h2 className="text-lg font-semibold">
-                Écrivez-nous
+                Ã‰crivez-nous
               </h2>
               <form onSubmit={onSubmit} className="mt-4 grid grid-cols-1 gap-4 lg:grid-cols-2">
                 <div>
@@ -91,7 +91,7 @@ export default function Contact() {
 
                 <div>
                   <label htmlFor="phone" className="mb-2 block text-sm text-gray-700">
-                    Téléphone
+                    TÃ©lÃ©phone
                   </label>
                   <input id="phone" name="phone" placeholder="01 23 45 67 89" className={inputCls} />
                 </div>
@@ -111,7 +111,7 @@ export default function Contact() {
                     id="message"
                     name="message"
                     rows={4}
-                    placeholder="Votre message…"
+                    placeholder="Votre messageâ€¦"
                     required
                     className={inputCls}
                   />
@@ -126,7 +126,7 @@ export default function Contact() {
                     Envoyer le message
                   </button>
 
-                  {/* Réseaux cliquables (colonne droite) */}
+                  {/* RÃ©seaux cliquables (colonne droite) */}
                   <div className="flex items-center gap-2">
                     <span className="text-sm text-gray-600">Ou via :</span>
                     <div className="flex items-center gap-2">
@@ -151,10 +151,10 @@ export default function Contact() {
                 </div>
               </form>
 
-              {/* Bandeau d’info (couleur jaune/orange) */}
+              {/* Bandeau dâ€™info (couleur jaune/orange) */}
               <div className="mt-4 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
-                💡 Astuce : pensez à vérifier votre dossier “Courriers indésirables” si vous
-                n’avez pas de réponse sous 24h.
+                ðŸ’¡ Astuce : pensez Ã  vÃ©rifier votre dossier â€œCourriers indÃ©sirablesâ€ si vous
+                nâ€™avez pas de rÃ©ponse sous 24h.
               </div>
             </div>
           </section>
@@ -163,3 +163,4 @@ export default function Contact() {
     </div>
   );
 }
+

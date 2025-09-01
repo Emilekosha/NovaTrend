@@ -22,7 +22,7 @@ export function CompareProvider({ children }) {
   const has = (id) => items.some((p) => p.id === id);
 
   const add = (product) => {
-    if (has(product.id)) return true; // déjà présent
+    if (has(product.id)) return true; // dÃ©jÃ  prÃ©sent
     if (items.length >= MAX) return false; // plein
     setItems((prev) => [
       ...prev,
@@ -49,3 +49,4 @@ export function CompareProvider({ children }) {
 }
 
 export const useCompare = () => useContext(Ctx);
+

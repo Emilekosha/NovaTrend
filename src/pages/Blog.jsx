@@ -5,18 +5,18 @@ const ALL_POSTS = [
   {
     id: 1,
     title: "Tendances 2025 : les essentiels",
-    image: "/assets/blog_1.jpg",
-    excerpt: "Couleurs franches, matières techniques et coupes minimalistes au programme.",
+    image: "assets/blog_1.jpg",
+    excerpt: "Couleurs franches, matiÃ¨res techniques et coupes minimalistes au programme.",
     category: "Tendances",
     date: "2025-02-10",
     read: "5 min",
-    author: "Équipe DemoShop",
+    author: "Ã‰quipe DemoShop",
   },
   {
     id: 2,
     title: "Bien choisir sa taille",
-    image: "/assets/blog_2.jpg",
-    excerpt: "Le guide simple pour éviter les retours et trouver l’ajustement parfait.",
+    image: "assets/blog_2.jpg",
+    excerpt: "Le guide simple pour Ã©viter les retours et trouver lâ€™ajustement parfait.",
     category: "Guides",
     date: "2025-01-28",
     read: "4 min",
@@ -24,29 +24,29 @@ const ALL_POSTS = [
   },
   {
     id: 3,
-    title: "Matériaux durables : que regarder ?",
-    image: "/assets/blog_3.jpg",
-    excerpt: "Coton recyclé, caoutchouc naturel, polyester certifié… on fait le point.",
-    category: "Durabilité",
+    title: "MatÃ©riaux durables : que regarder ?",
+    image: "assets/blog_3.jpg",
+    excerpt: "Coton recyclÃ©, caoutchouc naturel, polyester certifiÃ©â€¦ on fait le point.",
+    category: "DurabilitÃ©",
     date: "2025-01-08",
     read: "6 min",
-    author: "Léo",
+    author: "LÃ©o",
   },
   {
     id: 4,
     title: "Entretenir ses sneakers",
-    image: "/assets/collection-2.jpg",
+    image: "assets/collection-2.jpg",
     excerpt: "Nos astuces simples pour garder vos paires comme neuves.",
     category: "Guides",
     date: "2024-12-18",
     read: "3 min",
-    author: "Équipe DemoShop",
+    author: "Ã‰quipe DemoShop",
   },
   {
     id: 5,
     title: "Lookbook printemps",
-    image: "/assets/collection-1.jpg",
-    excerpt: "Des silhouettes faciles à porter, du bureau au week-end.",
+    image: "assets/collection-1.jpg",
+    excerpt: "Des silhouettes faciles Ã  porter, du bureau au week-end.",
     category: "Tendances",
     date: "2024-12-01",
     read: "4 min",
@@ -55,12 +55,12 @@ const ALL_POSTS = [
   {
     id: 6,
     title: "Labels & certifications",
-    image: "/assets/collection-3.jpg",
-    excerpt: "Oeko-Tex, GRS, FSC… que signifient ces logos sur vos produits ?",
-    category: "Durabilité",
+    image: "assets/collection-3.jpg",
+    excerpt: "Oeko-Tex, GRS, FSCâ€¦ que signifient ces logos sur vos produits ?",
+    category: "DurabilitÃ©",
     date: "2024-11-15",
     read: "7 min",
-    author: "Léo",
+    author: "LÃ©o",
   },
 ];
 
@@ -84,7 +84,7 @@ export default function Blog() {
     e.preventDefault();
     const email = new FormData(e.currentTarget).get("email");
     if (!email) return;
-    alert(`Merci ! Nous vous écrirons à ${email}.`);
+    alert(`Merci ! Nous vous Ã©crirons Ã  ${email}.`);
     e.currentTarget.reset();
   }
 
@@ -93,7 +93,7 @@ export default function Blog() {
       "inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold";
     if (label === "Tendances") return base + " bg-blue-100 text-blue-700";
     if (label === "Guides") return base + " bg-amber-100 text-amber-700";
-    if (label === "Durabilité") return base + " bg-orange-100 text-orange-700";
+    if (label === "DurabilitÃ©") return base + " bg-orange-100 text-orange-700";
     return base + " bg-gray-100 text-gray-700";
   };
 
@@ -117,10 +117,10 @@ export default function Blog() {
             <input
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Rechercher un article…"
+              placeholder="Rechercher un articleâ€¦"
               className="w-full rounded-xl border px-10 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-300"
             />
-            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">🔎</span>
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">ðŸ”Ž</span>
           </div>
         </div>
       </header>
@@ -145,9 +145,9 @@ export default function Blog() {
 
       {/* Grille principale */}
       <div className="mt-8 grid gap-8 lg:grid-cols-3">
-        {/* Colonne principale (à gauche) */}
+        {/* Colonne principale (Ã  gauche) */}
         <div className="lg:col-span-2 space-y-8">
-          {/* Article à la une */}
+          {/* Article Ã  la une */}
           {featured && (
             <article className="overflow-hidden rounded-3xl border bg-white hover:shadow-lg transition-shadow">
               <Link to={`/blog`} className="block">
@@ -164,14 +164,14 @@ export default function Blog() {
                   <div className="flex items-center justify-between gap-4">
                     <span className={chip(featured.category)}>{featured.category}</span>
                     <span className="text-sm text-gray-500">
-                      {new Date(featured.date).toLocaleDateString("fr-FR")} • {featured.read}
+                      {new Date(featured.date).toLocaleDateString("fr-FR")} â€¢ {featured.read}
                     </span>
                   </div>
                   <h2 className="mt-3 text-2xl sm:text-3xl font-bold leading-tight">
                     {featured.title}
                   </h2>
                   <p className="mt-2 text-gray-600">{featured.excerpt}</p>
-                  <div className="mt-4 text-blue-700 font-semibold">Lire l’article →</div>
+                  <div className="mt-4 text-blue-700 font-semibold">Lire lâ€™article â†’</div>
                 </div>
               </Link>
             </article>
@@ -199,13 +199,13 @@ export default function Blog() {
                       <div className="flex items-center justify-between gap-3">
                         <span className={chip(p.category)}>{p.category}</span>
                         <span className="text-xs text-gray-500">
-                          {new Date(p.date).toLocaleDateString("fr-FR")} • {p.read}
+                          {new Date(p.date).toLocaleDateString("fr-FR")} â€¢ {p.read}
                         </span>
                       </div>
                       <h3 className="mt-2 text-lg font-semibold">{p.title}</h3>
                       <p className="mt-1 text-gray-600">{p.excerpt}</p>
                       <div className="mt-3 text-blue-700 font-semibold text-sm">
-                        Lire → 
+                        Lire â†’ 
                       </div>
                     </div>
                   </Link>
@@ -221,7 +221,7 @@ export default function Blog() {
           <div className="rounded-2xl border bg-white p-5">
             <h4 className="text-lg font-semibold">Newsletter</h4>
             <p className="mt-1 text-sm text-gray-600">
-              Nouveaux articles, guides et promos — 1 fois par mois.
+              Nouveaux articles, guides et promos â€” 1 fois par mois.
             </p>
             <form onSubmit={onSubscribe} className="mt-3 flex gap-2">
               <label htmlFor="blog-news" className="sr-only">Email</label>
@@ -234,14 +234,14 @@ export default function Blog() {
                 className="w-full rounded-xl border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-300"
               />
               <button className="rounded-xl bg-black text-white px-4 py-2">
-                S’abonner
+                Sâ€™abonner
               </button>
             </form>
           </div>
 
-          {/* Catégories */}
+          {/* CatÃ©gories */}
           <div className="rounded-2xl border bg-white p-5">
-            <h4 className="text-lg font-semibold">Catégories</h4>
+            <h4 className="text-lg font-semibold">CatÃ©gories</h4>
             <ul className="mt-3 space-y-2 text-sm">
               {categories.map((c) => (
                 <li key={c} className="flex items-center justify-between">
@@ -261,9 +261,9 @@ export default function Blog() {
             </ul>
           </div>
 
-          {/* À propos */}
+          {/* Ã€ propos */}
           <div className="rounded-2xl border bg-white p-5">
-            <h4 className="text-lg font-semibold">À propos</h4>
+            <h4 className="text-lg font-semibold">Ã€ propos</h4>
             <p className="mt-2 text-sm text-gray-600">
               Nous partageons ici nos inspirations, nos conseils produits et les coulisses de
               DemoShop. Bonne lecture !
@@ -277,3 +277,4 @@ export default function Blog() {
     </div>
   );
 }
+

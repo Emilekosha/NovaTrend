@@ -16,7 +16,7 @@ export default function Compare() {
 
       {items.length === 0 ? (
         <div className="mt-4 text-gray-600">
-          Aucune sélection pour le moment. <Link className="underline" to="/shop">Choisir des produits</Link>
+          Aucune sÃ©lection pour le moment. <Link className="underline" to="/shop">Choisir des produits</Link>
         </div>
       ) : (
         <div className="mt-6 overflow-x-auto">
@@ -25,7 +25,7 @@ export default function Compare() {
               <tr className="text-left">
                 <th className="p-3 border">Produit</th>
                 <th className="p-3 border">Prix</th>
-                <th className="p-3 border">Catégorie</th>
+                <th className="p-3 border">CatÃ©gorie</th>
                 <th className="p-3 border">Note</th>
                 <th className="p-3 border">Action</th>
               </tr>
@@ -41,7 +41,7 @@ export default function Compare() {
                       </div>
                     </div>
                   </td>
-                  <td className="p-3 border">{p.price} €</td>
+                  <td className="p-3 border">{p.price} â‚¬</td>
                   <td className="p-3 border">{p.category}</td>
                   <td className="p-3 border">{p.rating} / 5</td>
                   <td className="p-3 border">
@@ -56,3 +56,4 @@ export default function Compare() {
     </main>
   );
 }
+

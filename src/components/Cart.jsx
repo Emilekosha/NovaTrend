@@ -19,7 +19,7 @@ export default function Cart(){
                   <div className="text-sm text-gray-500">{item.category}</div>
                   <div className="mt-1 font-semibold">{fmt.format(item.price)}</div>
                   <div className="mt-2 flex items-center gap-2">
-                    <button className="rounded-lg border px-2" onClick={()=>updateQty(item.id, Math.max(0,item.qty-1))}>−</button>
+                    <button className="rounded-lg border px-2" onClick={()=>updateQty(item.id, Math.max(0,item.qty-1))}>âˆ’</button>
                     <span className="min-w-[2ch] text-center">{item.qty}</span>
                     <button className="rounded-lg border px-2" onClick={()=>updateQty(item.id, item.qty+1)}>+</button>
                     <button className="ml-auto text-sm text-red-600 hover:underline" onClick={()=>removeItem(item.id)}>Retirer</button>
@@ -38,3 +38,4 @@ export default function Cart(){
     </div>
   )
 }
+

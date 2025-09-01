@@ -1,15 +1,18 @@
-# Dépendances / builds
+# dépendances et caches
 node_modules/
+node_modules/.cache/
+node_modules/.vite/
+pnpm-lock.yaml
+
+# build
 dist/
-.vite/
-.cache/
-*.log
 
-# OS / éditeur
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# env & OS
+.env*
 .DS_Store
-Thumbs.db
-.vscode/
-
-# Env
-.env
-.env.*

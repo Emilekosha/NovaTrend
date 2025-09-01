@@ -49,3 +49,4 @@ export function WishlistProvider({ children }) {
 }
 
 export const useWishlist = () => useContext(Ctx);
+

@@ -4,7 +4,7 @@ import { createOrder } from "../services/orders.js";
 import { useCart } from "../context/CartContext.jsx";
 
 export default function Checkout() {
-  const { items, cartTotal, clearCart } = useCart(); // nécessite que items soit exposé par CartContext
+  const { items, cartTotal, clearCart } = useCart(); // nÃ©cessite que items soit exposÃ© par CartContext
   const navigate = useNavigate();
   const fmt = new Intl.NumberFormat("fr-FR", { style: "currency", currency: "EUR" });
 
@@ -26,17 +26,17 @@ export default function Checkout() {
     const form = new FormData(e.currentTarget);
     const name = form.get("name") || "client";
 
-    // Validation spécifique Mobile Money
+    // Validation spÃ©cifique Mobile Money
     if (method === "mobile") {
       const phone = (form.get("walletPhone") || "").trim();
       if (!phone) {
-        alert("Merci d’indiquer le numéro Mobile Money.");
+        alert("Merci dâ€™indiquer le numÃ©ro Mobile Money.");
         setProcessing(false);
         return;
       }
     }
 
-    // Construire et enregistrer la commande (démo: localStorage)
+    // Construire et enregistrer la commande (dÃ©mo: localStorage)
     const order = createOrder({
       items: (items || []).map(({ id, title, price, image, qty }) => ({
         id, title, price, image, qty,
@@ -55,7 +55,7 @@ export default function Checkout() {
         country: form.get("country"),
       },
       note: form.get("note") || "",
-      paymentRef: undefined, // à renseigner si tu branches Stripe/PayPal/etc.
+      paymentRef: undefined, // Ã  renseigner si tu branches Stripe/PayPal/etc.
     });
 
     clearCart();
@@ -80,7 +80,7 @@ export default function Checkout() {
             </span>
           </h1>
           <p className="mt-1 text-gray-600">
-            Finalisez votre commande en toute sécurité.
+            Finalisez votre commande en toute sÃ©curitÃ©.
           </p>
 
           <form onSubmit={onSubmit} className="mt-6 space-y-6">
@@ -96,7 +96,7 @@ export default function Checkout() {
                 <input type="email" name="email" className={inputBase} required />
               </div>
               <div>
-                <label className="block text-sm mb-1">Téléphone</label>
+                <label className="block text-sm mb-1">TÃ©lÃ©phone</label>
                 <input name="phone" className={inputBase} inputMode="tel" />
               </div>
             </div>
@@ -128,12 +128,12 @@ export default function Checkout() {
               <textarea name="note" rows={3} className={inputBase} placeholder="Infos de livraison, interphone, etc." />
             </div>
 
-            {/* Sélecteur de méthode */}
+            {/* SÃ©lecteur de mÃ©thode */}
             <fieldset className="grid gap-3 sm:grid-cols-3">
               {[
-                { id: "card", title: "Carte bancaire", note: "Visa/Mastercard (démo)" },
+                { id: "card", title: "Carte bancaire", note: "Visa/Mastercard (dÃ©mo)" },
                 { id: "mobile", title: "Mobile Money", note: "MTN / Orange / Airtel / Wave" },
-                { id: "cod", title: "À la livraison", note: "Espèces / TPV au livreur" },
+                { id: "cod", title: "Ã€ la livraison", note: "EspÃ¨ces / TPV au livreur" },
               ].map((m) => {
                 const selected =
                   method === m.id
@@ -176,7 +176,7 @@ export default function Checkout() {
                 </div>
                 <div className="mt-3 grid md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm mb-1">Numéro de carte (démo)</label>
+                    <label className="block text-sm mb-1">NumÃ©ro de carte (dÃ©mo)</label>
                     <input className={inputBase} name="card" placeholder="4242 4242 4242 4242" />
                   </div>
                   <div className="grid grid-cols-2 gap-4">
@@ -200,7 +200,7 @@ export default function Checkout() {
                 <p className="text-sm text-gray-600">Nous vous enverrons une demande de paiement sur votre portefeuille.</p>
                 <div className="mt-3 grid md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm mb-1">Opérateur</label>
+                    <label className="block text-sm mb-1">OpÃ©rateur</label>
                     <select name="walletProvider" className={inputBase} defaultValue="MTN">
                       {["MTN", "Orange", "Airtel", "Wave", "Autre"].map((o) => (
                         <option key={o} value={o}>{o}</option>
@@ -208,7 +208,7 @@ export default function Checkout() {
                     </select>
                   </div>
                   <div>
-                    <label className="block text-sm mb-1">Numéro de portefeuille</label>
+                    <label className="block text-sm mb-1">NumÃ©ro de portefeuille</label>
                     <input
                       name="walletPhone"
                       className={inputBase}
@@ -218,17 +218,17 @@ export default function Checkout() {
                     />
                   </div>
                 </div>
-                <p className="mt-2 text-xs text-gray-500">Démo : pas de transaction réelle.</p>
+                <p className="mt-2 text-xs text-gray-500">DÃ©mo : pas de transaction rÃ©elle.</p>
               </div>
             )}
 
             {/* Bloc COD */}
             {method === "cod" && (
               <div className={`${box} border-orange-200`}>
-                <h2 className="text-lg font-semibold text-orange-700">Paiement à la livraison</h2>
-                <p className="text-sm text-gray-600">Réglez votre commande au livreur (espèces ou terminal bancaire).</p>
+                <h2 className="text-lg font-semibold text-orange-700">Paiement Ã  la livraison</h2>
+                <p className="text-sm text-gray-600">RÃ©glez votre commande au livreur (espÃ¨ces ou terminal bancaire).</p>
                 <ul className="mt-3 list-disc pl-5 text-sm text-gray-700 space-y-1">
-                  <li>Vérifiez l’adresse et le téléphone.</li>
+                  <li>VÃ©rifiez lâ€™adresse et le tÃ©lÃ©phone.</li>
                   <li>Le livreur vous contactera avant la remise du colis.</li>
                 </ul>
               </div>
@@ -243,7 +243,7 @@ export default function Checkout() {
                   ${disabled ? "bg-gray-400" : "bg-gradient-to-r from-sky-600 via-amber-500 to-orange-600 hover:opacity-95"}`}
                 aria-disabled={disabled}
               >
-                {processing ? "Traitement…" : cartTotal > 0 ? "Valider la commande" : "Panier vide"}
+                {processing ? "Traitementâ€¦" : cartTotal > 0 ? "Valider la commande" : "Panier vide"}
               </button>
 
               <div className="inline-flex items-center gap-2 rounded-full border px-3 py-1 text-sm">
@@ -257,3 +257,4 @@ export default function Checkout() {
     </div>
   );
 }
+

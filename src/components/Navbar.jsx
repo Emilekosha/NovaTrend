@@ -39,14 +39,14 @@ export default function Navbar() {
             aria-label="Accueil DemoShop"
           >
             <img
-              src={logoImg || "/assets/logo.png"} // si tu utilises public/assets
+              src={logoImg || "assets/logo.png"} // si tu utilises public/assets
               alt="DemoShop"
               width="120"
               height="32"
               className="h-8 w-auto object-contain"
               onError={(e) => {
                 e.currentTarget.style.display = "none";
-              }} // masque l'image cassée
+              }} // masque l'image cassÃ©e
               decoding="async"
             />
             <span  className="ml-2 text-lg sm:text-xl font-extrabold tracking-tight
@@ -143,3 +143,4 @@ export default function Navbar() {
     </nav>
   );
 }
+

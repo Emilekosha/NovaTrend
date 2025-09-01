@@ -26,7 +26,7 @@ export default function OrdersAdmin() {
                 <th className="p-3 border">Date</th>
                 <th className="p-3 border">Client</th>
                 <th className="p-3 border">Montant</th>
-                <th className="p-3 border">Méthode</th>
+                <th className="p-3 border">MÃ©thode</th>
                 <th className="p-3 border">Statut</th>
                 <th className="p-3 border">Actions</th>
               </tr>
@@ -52,3 +52,4 @@ export default function OrdersAdmin() {
     </main>
   );
 }
+

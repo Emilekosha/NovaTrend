@@ -21,7 +21,7 @@ export function CartProvider({ children }) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
   }, [items]);
 
-  // dérivés
+  // dÃ©rivÃ©s
   const cartCount = items.reduce((a, i) => a + (i.qty || 1), 0);
   const cartTotal = items.reduce((a, i) => a + (i.price || 0) * (i.qty || 1), 0);
 
@@ -55,3 +55,4 @@ export function CartProvider({ children }) {
 }
 
 export const useCart = () => useContext(CartContext);
+

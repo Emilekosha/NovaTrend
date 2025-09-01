@@ -9,8 +9,8 @@ function Stars({ value = 0 }) {
   const rounded = Math.round(value);
   return (
     <span className="text-amber-500 text-sm" aria-label={`${value}/5`}>
-      {"★".repeat(rounded)}
-      <span className="text-gray-300">{"★".repeat(5 - rounded)}</span>
+      {"â˜…".repeat(rounded)}
+      <span className="text-gray-300">{"â˜…".repeat(5 - rounded)}</span>
     </span>
   );
 }
@@ -42,13 +42,13 @@ export default function ProductDetail() {
           onClick={() => navigate("/shop")}
           className="rounded-2xl border px-4 py-2"
         >
-          Retour à la boutique
+          Retour Ã  la boutique
         </button>
       </div>
     );
   }
 
-  // Galerie : si product.images existe on l’utilise, sinon on répète l’image principale
+  // Galerie : si product.images existe on lâ€™utilise, sinon on rÃ©pÃ¨te lâ€™image principale
   const gallery =
     Array.isArray(product.images) && product.images.length
       ? product.images
@@ -56,7 +56,7 @@ export default function ProductDetail() {
 
   const setFallback = (e) => {
     // image de secours si la source casse
-    e.currentTarget.src = "/assets/hero-banner.png";
+    e.currentTarget.src = "assets/hero-banner.png";
   };
 
   const dec = () => setQty((q) => Math.max(1, q - 1));
@@ -81,10 +81,10 @@ export default function ProductDetail() {
             <button
               onClick={() => setActive((i) => Math.max(0, i - 1))}
               className="rounded-xl border px-3 py-2 text-gray-600 hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
-              aria-label="Image précédente"
+              aria-label="Image prÃ©cÃ©dente"
               disabled={active === 0}
             >
-              ‹
+              â€¹
             </button>
 
             <div className="flex-1 overflow-x-auto">
@@ -118,7 +118,7 @@ export default function ProductDetail() {
               aria-label="Image suivante"
               disabled={active === gallery.length - 1}
             >
-              ›
+              â€º
             </button>
           </div>
         </div>
@@ -143,16 +143,16 @@ export default function ProductDetail() {
             {product.description}
           </p>
 
-          {/* Quantité + actions */}
+          {/* QuantitÃ© + actions */}
           <div className="mt-6 flex flex-wrap items-stretch gap-3">
             <div className="inline-flex items-center rounded-xl border">
               <button
                 onClick={dec}
                 className="px-3 py-3 text-gray-700 hover:bg-gray-50"
-                aria-label="Diminuer la quantité"
+                aria-label="Diminuer la quantitÃ©"
                 type="button"
               >
-                −
+                âˆ’
               </button>
               <input
                 type="number"
@@ -164,12 +164,12 @@ export default function ProductDetail() {
                   setQty(Math.max(1, parseInt(e.target.value || "1", 10)))
                 }
                 className="w-16 text-center border-x px-2 py-3"
-                aria-label="Quantité"
+                aria-label="QuantitÃ©"
               />
               <button
                 onClick={inc}
                 className="px-3 py-3 text-gray-700 hover:bg-gray-50"
-                aria-label="Augmenter la quantité"
+                aria-label="Augmenter la quantitÃ©"
                 type="button"
               >
                 +
@@ -204,12 +204,12 @@ export default function ProductDetail() {
               title={
                 isInWishlist(product.id)
                   ? "Retirer de ma liste"
-                  : "Ajouter à ma liste"
+                  : "Ajouter Ã  ma liste"
               }
             >
               {isInWishlist(product.id)
-                ? "✓ Dans ma liste"
-                : "♡ Ajouter à la liste"}
+                ? "âœ“ Dans ma liste"
+                : "â™¡ Ajouter Ã  la liste"}
             </button>
 
             {/* Compare */}
@@ -225,18 +225,18 @@ export default function ProductDetail() {
               aria-pressed={inCompare(product.id)}
               title={
                 inCompare(product.id)
-                  ? "Déjà dans la comparaison"
-                  : "Ajouter à la comparaison"
+                  ? "DÃ©jÃ  dans la comparaison"
+                  : "Ajouter Ã  la comparaison"
               }
             >
-              ⇄ {inCompare(product.id) ? "Dans la comparaison" : "Comparer"}
+              â‡„ {inCompare(product.id) ? "Dans la comparaison" : "Comparer"}
             </button>
           </div>
 
           {/* Meta */}
           <div className="mt-6 space-y-2 text-sm text-gray-600">
             <div>
-              <span className="font-medium text-gray-800">Catégories :</span>{" "}
+              <span className="font-medium text-gray-800">CatÃ©gories :</span>{" "}
               {product.category}
             </div>
             <div>
@@ -297,19 +297,19 @@ export default function ProductDetail() {
             <p>
               {product.description} Lorem ipsum dolor sit amet, consectetur
               adipiscing elit. Donec non est at libero vulputate rutrum.
-              Pellentesque aliquet, sem eget laoreet ultrices…
+              Pellentesque aliquet, sem eget laoreet ultricesâ€¦
             </p>
           </div>
         ) : (
           <div className="mt-6 text-gray-700">
             <p className="text-sm">
-              <strong>Jean</strong> — ★★★★☆ : Très bonnes chaussures, taille
+              <strong>Jean</strong> â€” â˜…â˜…â˜…â˜…â˜† : TrÃ¨s bonnes chaussures, taille
               bien.
             </p>
             <form
               onSubmit={(e) => {
                 e.preventDefault();
-                alert("Merci pour votre avis (démo).");
+                alert("Merci pour votre avis (dÃ©mo).");
               }}
               className="mt-4 space-y-3 max-w-md"
             >
@@ -317,11 +317,11 @@ export default function ProductDetail() {
               <textarea
                 rows={4}
                 className="w-full rounded-xl border px-3 py-2"
-                placeholder="Écrivez votre commentaire…"
+                placeholder="Ã‰crivez votre commentaireâ€¦"
                 required
               />
               <button className="rounded-xl border px-4 py-2 hover:shadow-sm">
-                Envoyer (démo)
+                Envoyer (dÃ©mo)
               </button>
             </form>
           </div>
@@ -330,3 +330,4 @@ export default function ProductDetail() {
     </div>
   );
 }
+

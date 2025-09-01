@@ -9,14 +9,14 @@ export default function ProductList({limit}){
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
       <div className="flex flex-col md:flex-row gap-3 items-center mb-6">
-        <input value={query} onChange={e=>setQuery(e.target.value)} placeholder="Rechercher des produits…" className="w-full rounded-2xl border px-4 py-2 focus:outline-none focus:ring-2 focus:ring-black/10"/>
-        <select value={category} onChange={e=>setCategory(e.target.value)} className="rounded-2xl border px-3 py-2" aria-label="Catégorie">
+        <input value={query} onChange={e=>setQuery(e.target.value)} placeholder="Rechercher des produitsâ€¦" className="w-full rounded-2xl border px-4 py-2 focus:outline-none focus:ring-2 focus:ring-black/10"/>
+        <select value={category} onChange={e=>setCategory(e.target.value)} className="rounded-2xl border px-3 py-2" aria-label="CatÃ©gorie">
           {categories.map(c=> <option key={c} value={c}>{c}</option>)}
         </select>
         <select value={sort} onChange={e=>setSort(e.target.value)} className="rounded-2xl border px-3 py-2" aria-label="Tri">
           <option value="pertinence">Pertinence</option>
-          <option value="prix-asc">Prix ↑</option>
-          <option value="prix-desc">Prix ↓</option>
+          <option value="prix-asc">Prix â†‘</option>
+          <option value="prix-desc">Prix â†“</option>
           <option value="rating">Meilleures notes</option>
         </select>
       </div>
@@ -26,3 +26,4 @@ export default function ProductList({limit}){
     </section>
   )
 }
+

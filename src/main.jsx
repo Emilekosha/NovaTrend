@@ -8,7 +8,7 @@ import { CartProvider } from './context/CartContext.jsx'
 import { WishlistProvider } from './context/WishlistContext.jsx'
 import { CompareProvider } from './context/CompareContext.jsx'
 
-// ➜ retire le / final pour que /NovaTrend et /NovaTrend/ fonctionnent
+// â¬‡ï¸ supprime les slash finaux pour que /NovaTrend et /NovaTrend/ fonctionnent
 const BASENAME = (import.meta.env.BASE_URL || '/').replace(/\/+$/, '')
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -27,3 +27,4 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </BrowserRouter>
   </React.StrictMode>
 )
+
