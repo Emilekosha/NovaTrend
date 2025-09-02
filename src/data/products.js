@@ -9,7 +9,7 @@ export const products = [
     rating: 4.1,
     image: "assets/product-1.jpg",
     description:
-      "Baskets Skyline â€” Chaussures. Confort, qualitÃ© et style au quotidien.",
+      "Baskets Skyline — Chaussures. Confort, qualité et style au quotidien.",
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ export const products = [
     rating: 4.2,
     image: "assets/product-2.jpg",
     description:
-      "Aero Sprint â€” Chaussures. LÃ©gÃ¨res et respirantes pour la ville.",
+      "Aero Sprint — Chaussures. Légères et respirantes pour la ville.",
   },
   {
     id: 3,
@@ -29,7 +29,7 @@ export const products = [
     rating: 4.3,
     image: "assets/product-3.jpg",
     description:
-      "Coral Street â€” Chaussures. Style urbain et amorti confortable.",
+      "Coral Street — Chaussures. Style urbain et amorti confortable.",
   },
   {
     id: 4,
@@ -38,7 +38,7 @@ export const products = [
     category: "Chaussures",
     rating: 4.5,
     image: "assets/product-4.jpg",
-    description: "Wave Pulse â€” Chaussures. Polyvalentes, semelle souple.",
+    description: "Wave Pulse — Chaussures. Polyvalentes, semelle souple.",
   },
   {
     id: 5,
@@ -47,7 +47,7 @@ export const products = [
     category: "Chaussures",
     rating: 4.3,
     image: "assets/product-5.jpg",
-    description: "Lime Flex â€” Chaussures. Couleur pop, retour dâ€™Ã©nergie.",
+    description: "Lime Flex — Chaussures. Couleur pop, retour d’énergie.",
   },
   {
     id: 6,
@@ -56,7 +56,7 @@ export const products = [
     category: "Chaussures",
     rating: 4.4,
     image: "assets/product-6.jpg",
-    description: "Red Motion â€” Chaussures. Accroche et maintien fiables.",
+    description: "Red Motion — Chaussures. Accroche et maintien fiables.",
   },
   {
     id: 7,
@@ -65,73 +65,73 @@ export const products = [
     category: "Chaussures",
     rating: 4.6,
     image: "assets/product-7.jpg",
-    description: "Magenta Glide â€” Chaussures. Mesh aÃ©rÃ© et confort durable.",
+    description: "Magenta Glide — Chaussures. Mesh aéré et confort durable.",
   },
 
-  // ---- VÃªtements ----
+  // ---- Vêtements ----
   {
     id: 8,
     title: "T-shirt Essential",
     price: 21,
-    category: "VÃªtements",
+    category: "Vêtements",
     rating: 4.2,
     image: "assets/produit-9.jpg",
-    description: "T-shirt Essential â€” VÃªtements. Coton doux, coupe regular.",
+    description: "T-shirt Essential — Vêtements. Coton doux, coupe regular.",
   },
   {
     id: 9,
     title: "T-shirt Basique",
     price: 22,
-    category: "VÃªtements",
+    category: "Vêtements",
     rating: 4.0,
     image: "assets/c_t-shirt_men.png",
-    description: "T-shirt Basique â€” VÃªtements. Col rond, respirant.",
+    description: "T-shirt Basique — Vêtements. Col rond, respirant.",
   },
   {
     id: 10,
     title: "Chemise Grise",
     price: 23,
-    category: "VÃªtements",
+    category: "Vêtements",
     rating: 4.1,
     image: "assets/product-10.jpg",
     description:
-      "Chemise Formelle Grise â€” VÃªtements. Tissu lisse, poignet classique.",
+      "Chemise Formelle Grise — Vêtements. Tissu lisse, poignet classique.",
   },
   {
     id: 11,
     title: "Polo Essential",
     price: 27,
-    category: "VÃªtements",
+    category: "Vêtements",
     rating: 4.2,
     image: "assets/c_polo-shirt.png",
-    description: "Polo Essential â€” VÃªtements. PiquÃ© respirant.",
+    description: "Polo Essential — Vêtements. Piqué respirant.",
   },
   {
     id: 12,
     title: "Chemisier Femme",
     price: 28,
-    category: "VÃªtements",
+    category: "Vêtements",
     rating: 4.4,
     image: "assets/c_shirt-girl.png",
-    description: "Chemisier â€” VÃªtements. Fluide, Ã©lÃ©gant.",
+    description: "Chemisier — Vêtements. Fluide, élégant.",
   },
   {
     id: 13,
     title: "Chemise Western",
     price: 29,
-    category: "VÃªtements",
+    category: "Vêtements",
     rating: 4.2,
     image: "assets/c_western-shirt.png",
-    description: "Chemise Western â€” VÃªtements. SurpiqÃ»res contrastÃ©es.",
+    description: "Chemise Western — Vêtements. Surpiqûres contrastées.",
   },
   {
     id: 14,
-    title: "Tunique FÃ©minine",
+    title: "Tunique Féminine",
     price: 33,
-    category: "VÃªtements",
+    category: "Vêtements",
     rating: 4.1,
     image: "assets/c_tunic-shirt_girl.png",
-    description: "Tunique â€” VÃªtements. Tombe lÃ©ger, confortable.",
+    description: "Tunique — Vêtements. Tombe léger, confortable.",
   },
 
   // ---- Accessoires ----
@@ -143,7 +143,7 @@ export const products = [
     rating: 4.3,
     image: "assets/offer_img.jpg",
     description:
-      "Casquette Aero â€” Accessoires. Look casual et protection soleil.",
+      "Casquette Aero — Accessoires. Look casual et protection soleil.",
   },
   {
     id: 16,
@@ -152,7 +152,7 @@ export const products = [
     category: "Accessoires",
     rating: 4.1,
     image: "assets/on_sale_1.jpg",
-    description: "Mini Tote â€” Accessoires. Cabas compact du quotidien.",
+    description: "Mini Tote — Accessoires. Cabas compact du quotidien.",
   },
   {
     id: 17,
@@ -161,7 +161,7 @@ export const products = [
     category: "Accessoires",
     rating: 4.0,
     image: "assets/insta-3.jpg",
-    description: "Lacets Pro â€” Accessoires. RÃ©sistants, plusieurs couleurs.",
+    description: "Lacets Pro — Accessoires. Résistants, plusieurs couleurs.",
   },
   {
     id: 18,
@@ -170,7 +170,7 @@ export const products = [
     category: "Accessoires",
     rating: 4.2,
     image: "assets/insta-6.jpg",
-    description: "Gants Training â€” Accessoires. Grip et maintien.",
+    description: "Gants Training — Accessoires. Grip et maintien.",
   },
   {
     id: 19,
@@ -179,7 +179,7 @@ export const products = [
     category: "Accessoires",
     rating: 4.3,
     image: "assets/special-banner.jpg",
-    description: "Ceinture Sport â€” Accessoires. RÃ©glable et robuste.",
+    description: "Ceinture Sport — Accessoires. Réglable et robuste.",
   },
   {
     id: 20,
@@ -188,7 +188,7 @@ export const products = [
     category: "Accessoires",
     rating: 4.1,
     image: "assets/insta-7.jpg",
-    description: "Chaussettes â€” Accessoires. Maille respirante.",
+    description: "Chaussettes — Accessoires. Maille respirante.",
   },
   {
     id: 21,
@@ -197,18 +197,18 @@ export const products = [
     category: "Accessoires",
     rating: 4.1,
     image: "assets/insta-8.jpg",
-    description: "Casquette Aero â€” Accessoires. VisiÃ¨re courbÃ©e, ajustable.",
+    description: "Casquette Aero — Accessoires. Visière courbée, ajustable.",
   },
 
   // ---- Tech ----
   {
     id: 22,
-    title: "Ã‰couteurs AirLite",
+    title: "Écouteurs AirLite",
     price: 70,
     category: "Tech",
     rating: 4.4,
     image: "assets/blog_1.jpg",
-    description: "AirLite â€” Tech. Audio sans fil, autonomie longue.",
+    description: "AirLite — Tech. Audio sans fil, autonomie longue.",
   },
   {
     id: 23,
@@ -217,7 +217,7 @@ export const products = [
     category: "Tech",
     rating: 4.2,
     image: "assets/blog_2.jpg",
-    description: "Chargeur FastUSB â€” Tech. Recharge rapide universelle.",
+    description: "Chargeur FastUSB — Tech. Recharge rapide universelle.",
   },
   {
     id: 24,
@@ -226,7 +226,7 @@ export const products = [
     category: "Tech",
     rating: 4.0,
     image: "assets/blog_3.jpg",
-    description: "Clavier â€” Tech. Silencieux et compact.",
+    description: "Clavier — Tech. Silencieux et compact.",
   },
   {
     id: 25,
@@ -235,7 +235,7 @@ export const products = [
     category: "Tech",
     rating: 4.1,
     image: "assets/blog_1.jpg",
-    description: "Souris â€” Tech. Prise en main naturelle.",
+    description: "Souris — Tech. Prise en main naturelle.",
   },
   {
     id: 26,
@@ -244,7 +244,7 @@ export const products = [
     category: "Tech",
     rating: 4.3,
     image: "assets/blog_2.jpg",
-    description: "Hub USB-C â€” Tech. 6-en-1, aluminium.",
+    description: "Hub USB-C — Tech. 6-en-1, aluminium.",
   },
   {
     id: 27,
@@ -253,7 +253,7 @@ export const products = [
     category: "Tech",
     rating: 4.4,
     image: "assets/blog_3.jpg",
-    description: "Webcam â€” Tech. 1080p avec micro.",
+    description: "Webcam — Tech. 1080p avec micro.",
   },
   {
     id: 28,
@@ -262,18 +262,18 @@ export const products = [
     category: "Tech",
     rating: 4.2,
     image: "assets/blog_1.jpg",
-    description: "Batterie â€” Tech. Compacte, charge rapide.",
+    description: "Batterie — Tech. Compacte, charge rapide.",
   },
 
   // ---- Sacs ----
   {
     id: 29,
-    title: "Sac Ã  dos Daypack",
+    title: "Sac à dos Daypack",
     price: 61,
     category: "Sacs",
     rating: 4.5,
     image: "assets/product-29.jpeg",
-    description: "Daypack â€” Sacs. Compartiment zippÃ© et poches.",
+    description: "Daypack — Sacs. Compartiment zippé et poches.",
   },
   {
     id: 30,
@@ -282,7 +282,7 @@ export const products = [
     category: "Sacs",
     rating: 4.3,
     image: "assets/product-30.jpeg",
-    description: "Sac City â€” Sacs. BandouliÃ¨re et poche intÃ©rieure.",
+    description: "Sac City — Sacs. Bandoulière et poche intérieure.",
   },
   {
     id: 31,
@@ -291,7 +291,7 @@ export const products = [
     category: "Sacs",
     rating: 4.2,
     image: "assets/product-31.jpeg",
-    description: "Cabas Daily â€” Sacs. Tissu robuste, grande contenance.",
+    description: "Cabas Daily — Sacs. Tissu robuste, grande contenance.",
   },
   {
     id: 32,
@@ -300,7 +300,7 @@ export const products = [
     category: "Sacs",
     rating: 4.1,
     image: "assets/product-32.webp",
-    description: "Sac Reporter â€” Sacs. Format A4 avec poches organisÃ©es.",
+    description: "Sac Reporter — Sacs. Format A4 avec poches organisées.",
   },
   {
     id: 33,
@@ -309,7 +309,7 @@ export const products = [
     category: "Sacs",
     rating: 4.2,
     image: "assets/product-33.webp",
-    description: "Tote Shopper â€” Sacs. Minimaliste, pratique.",
+    description: "Tote Shopper — Sacs. Minimaliste, pratique.",
   },
   {
     id: 34,
@@ -318,7 +318,7 @@ export const products = [
     category: "Sacs",
     rating: 4.4,
     image: "assets/product-34.jpeg",
-    description: "Sac Weekend â€” Sacs. 48 h, bandouliÃ¨re amovible.",
+    description: "Sac Weekend — Sacs. 48 h, bandoulière amovible.",
   },
   {
     id: 35,
@@ -327,18 +327,18 @@ export const products = [
     category: "Sacs",
     rating: 4.3,
     image: "assets/product-35.jpeg",
-    description: "Sac Sport â€” Sacs. Compartiment chaussures ventilÃ©.",
+    description: "Sac Sport — Sacs. Compartiment chaussures ventilé.",
   },
 
   // ---- Montres ----
   {
     id: 36,
-    title: "Montre ConnectÃ©e Nova",
+    title: "Montre Connectée Nova",
     price: 129,
     category: "Montres",
     rating: 4.6,
     image: "assets/top_rated_2.jpg",
-    description: "Montre Nova â€” Montres. Notifications et suivi forme.",
+    description: "Montre Nova — Montres. Notifications et suivi forme.",
   },
   {
     id: 37,
@@ -347,7 +347,7 @@ export const products = [
     category: "Montres",
     rating: 4.4,
     image: "assets/product-37.jpg",
-    description: "Nova S â€” Montres. GPS et Ã©tanchÃ©itÃ© 5 ATM.",
+    description: "Nova S — Montres. GPS et étanchéité 5 ATM.",
   },
   {
     id: 38,
@@ -356,7 +356,7 @@ export const products = [
     category: "Montres",
     rating: 4.5,
     image: "assets/product-38.jpeg",
-    description: "Nova Pro â€” Montres. Autonomie Ã©tendue.",
+    description: "Nova Pro — Montres. Autonomie étendue.",
   },
   {
     id: 39,
@@ -365,7 +365,7 @@ export const products = [
     category: "Montres",
     rating: 4.0,
     image: "assets/product-39.jpeg",
-    description: "Nova Lite â€” Montres. Design fin et lÃ©ger.",
+    description: "Nova Lite — Montres. Design fin et léger.",
   },
   {
     id: 40,
@@ -374,7 +374,7 @@ export const products = [
     category: "Montres",
     rating: 4.8,
     image: "assets/top_rated_2.jpg",
-    description: "Nova X â€” Montres. Ã‰cran lumineux, capteurs prÃ©cis.",
+    description: "Nova X — Montres. Écran lumineux, capteurs précis.",
   },
   {
     id: 41,
@@ -383,7 +383,7 @@ export const products = [
     category: "Montres",
     rating: 4.6,
     image: "assets/top_rated_2.jpg",
-    description: "Nova Fit â€” Montres. Sport et bien-Ãªtre.",
+    description: "Nova Fit — Montres. Sport et bien-être.",
   },
   {
     id: 42,
@@ -392,10 +392,10 @@ export const products = [
     category: "Montres",
     rating: 4.4,
     image: "assets/top_rated_2.jpg",
-    description: "Nova Air â€” Montres. Ultra lÃ©gÃ¨re, bracelet silicone.",
+    description: "Nova Air — Montres. Ultra légère, bracelet silicone.",
   },
 
-  // ---- Sportswear (survÃªtements / joggers) ----
+  // ---- Sportswear (survêtements / joggers) ----
   {
     id: 43,
     title: "Jogger Flex",
@@ -403,7 +403,7 @@ export const products = [
     category: "Sportswear",
     rating: 4.7,
     image: "assets/IMG-20250214-WA0119.jpg",
-    description: "Jogger Flex â€” Sportswear. Coupe confort, molleton doux.",
+    description: "Jogger Flex — Sportswear. Coupe confort, molleton doux.",
   },
   {
     id: 44,
@@ -412,7 +412,7 @@ export const products = [
     category: "Sportswear",
     rating: 4.5,
     image: "assets/IMG-20250214-WA0120.jpg",
-    description: "Jogger Flex 2 â€” Sportswear. Stretch et maintien.",
+    description: "Jogger Flex 2 — Sportswear. Stretch et maintien.",
   },
   {
     id: 45,
@@ -421,7 +421,7 @@ export const products = [
     category: "Sportswear",
     rating: 4.3,
     image: "assets/IMG-20250214-WA0121.jpg",
-    description: "Jogger Flex 3 â€” Sportswear. Respirant, poches zippÃ©es.",
+    description: "Jogger Flex 3 — Sportswear. Respirant, poches zippées.",
   },
   {
     id: 46,
@@ -430,7 +430,7 @@ export const products = [
     category: "Sportswear",
     rating: 4.1,
     image: "assets/IMG-20250214-WA0122.jpg",
-    description: "Jogger Flex 4 â€” Sportswear. AjustÃ© et confortable.",
+    description: "Jogger Flex 4 — Sportswear. Ajusté et confortable.",
   },
   {
     id: 47,
@@ -439,7 +439,7 @@ export const products = [
     category: "Sportswear",
     rating: 4.9,
     image: "assets/IMG-20250214-WA0113.jpg",
-    description: "Jogger Flex 5 â€” Sportswear. IdÃ©al dÃ©tente et sport.",
+    description: "Jogger Flex 5 — Sportswear. Idéal détente et sport.",
   },
   {
     id: 48,
@@ -448,7 +448,7 @@ export const products = [
     category: "Sportswear",
     rating: 4.7,
     image: "assets/IMG-20250214-WA0114.jpg",
-    description: "Jogger Flex 6 â€” Sportswear. Tissu doux, cordon rÃ©glable.",
+    description: "Jogger Flex 6 — Sportswear. Tissu doux, cordon réglable.",
   },
   {
     id: 49,
@@ -457,10 +457,10 @@ export const products = [
     category: "Sportswear",
     rating: 4.5,
     image: "assets/IMG-20250214-WA0115.jpg",
-    description: "Jogger Flex 7 â€” Sportswear. Bords-cÃ´tes et coupe droite.",
+    description: "Jogger Flex 7 — Sportswear. Bords-côtes et coupe droite.",
   },
 
-  // ---- Outdoor (chaussures orientÃ©es plein air) ----
+  // ---- Outdoor (chaussures orientées plein air) ----
   {
     id: 50,
     title: "Baskets TrailPro",
@@ -468,7 +468,7 @@ export const products = [
     category: "Outdoor",
     rating: 4.8,
     image: "assets/product-8.jpg",
-    description: "TrailPro â€” Outdoor. Accroche et stabilitÃ© sur sentiers.",
+    description: "TrailPro — Outdoor. Accroche et stabilité sur sentiers.",
   },
   {
     id: 51,
@@ -477,7 +477,7 @@ export const products = [
     category: "Outdoor",
     rating: 4.6,
     image: "assets/collection-1.jpg",
-    description: "Trail Mint â€” Outdoor. Semelle amortie, coloris menthe.",
+    description: "Trail Mint — Outdoor. Semelle amortie, coloris menthe.",
   },
   {
     id: 52,
@@ -486,7 +486,7 @@ export const products = [
     category: "Outdoor",
     rating: 4.4,
     image: "assets/collection-2.jpg",
-    description: "Trail Mono â€” Outdoor. Bicolore, robuste et souple.",
+    description: "Trail Mono — Outdoor. Bicolore, robuste et souple.",
   },
   {
     id: 53,
@@ -495,7 +495,7 @@ export const products = [
     category: "Outdoor",
     rating: 4.2,
     image: "assets/collection-3.jpg",
-    description: "Trail Scarlet â€” Outdoor. Empeigne aÃ©rÃ©e, bon maintien.",
+    description: "Trail Scarlet — Outdoor. Empeigne aérée, bon maintien.",
   },
   {
     id: 54,
@@ -504,7 +504,7 @@ export const products = [
     category: "Outdoor",
     rating: 4.0,
     image: "assets/product-5.jpg",
-    description: "Trail Lime â€” Outdoor. Semelle flexible, adhÃ©rence.",
+    description: "Trail Lime — Outdoor. Semelle flexible, adhérence.",
   },
   {
     id: 55,
@@ -513,7 +513,7 @@ export const products = [
     category: "Outdoor",
     rating: 4.8,
     image: "assets/product-6.jpg",
-    description: "Trail Red â€” Outdoor. Dynamique et protectrice.",
+    description: "Trail Red — Outdoor. Dynamique et protectrice.",
   },
   {
     id: 56,
@@ -522,14 +522,14 @@ export const products = [
     category: "Outdoor",
     rating: 4.6,
     image: "assets/product-4.jpg",
-    description: "Trail Sunset â€” Outdoor. Confort longue distance.",
+    description: "Trail Sunset — Outdoor. Confort longue distance.",
   },
 ];
 
 export const categories = [
   "Tous",
   "Chaussures",
-  "VÃªtements",
+  "Vêtements",
   "Accessoires",
   "Tech",
   "Sacs",
@@ -541,4 +541,3 @@ export const categories = [
 export function getProductById(id) {
   return products.find((p) => p.id === Number(id));
 }
-

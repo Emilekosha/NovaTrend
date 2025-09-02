@@ -6,9 +6,9 @@ export default function Hero() {
   const navigate = useNavigate();
 
   return (
-    // â¬…ï¸ coupe tout dÃ©bordement horizontal causÃ© par les blobs floutÃ©s
+    // ⬇️ coupe tout débordement horizontal causé par les blobs floutés
     <section className="relative overflow-x-clip">
-      {/* dÃ©cor de fond */}
+      {/* décor de fond */}
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute -top-24 -left-24 h-72 w-72 rounded-full bg-gradient-to-tr from-indigo-400/40 to-fuchsia-400/40 blur-3xl" />
         <div className="absolute bottom-[-4rem] right-[-4rem] h-80 w-80 rounded-full bg-gradient-to-tr from-amber-300/40 to-pink-400/40 blur-3xl" />
@@ -18,7 +18,7 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-10">
         {/* carte hero */}
         <div className="relative overflow-hidden rounded-3xl border border-white/60 bg-white/70 backdrop-blur shadow-[0_20px_60px_-20px_rgba(0,0,0,0.25)]">
-          {/* bandeau dÃ©co fin */}
+          {/* bandeau déco fin */}
           <div className="h-1 w-full bg-gradient-to-r from-indigo-500 via-fuchsia-500 to-amber-400" />
 
           <div className="grid md:grid-cols-2 gap-5 sm:gap-6 items-center p-5 sm:p-8 lg:p-10">
@@ -32,25 +32,25 @@ export default function Hero() {
 
               <h1 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-[1.1] tracking-tight">
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-gray-900 to-gray-700">
-                  Nouvelles arrivÃ©es
+                  Nouvelles arrivées
                 </span>
               </h1>
 
               <p className="mt-3 text-gray-600 max-w-prose">
-                Utilise tes propres visuels : banniÃ¨res, produits, marques.
-                Design Ã©purÃ©, rapide et prÃªt pour le mobile.
+                Utilise tes propres visuels : bannières, produits, marques.
+                Design épuré, rapide et prêt pour le mobile.
               </p>
 
               {/* points forts */}
               <ul className="mt-4 space-y-2 text-sm text-gray-700">
                 {[
-                  "Livraison gratuite dÃ¨s 80â‚¬",
+                  "Livraison gratuite dès 80€",
                   "Retours sous 30 jours",
-                  "Paiements sÃ©curisÃ©s",
+                  "Paiements sécurisés",
                 ].map((t, i) => (
                   <li key={i} className="flex items-center gap-2">
                     <span className="inline-grid h-5 w-5 place-items-center rounded-full bg-gradient-to-r from-indigo-600 to-fuchsia-600 text-white text-[10px]">
-                      âœ“
+                      ✓
                     </span>
                     {t}
                   </li>
@@ -76,19 +76,19 @@ export default function Hero() {
 
             {/* Colonne droite (visuel) */}
             <div className="relative">
-              {/* â¬…ï¸ moins haut sur mobile */}
+              {/* ⬇️ moins haut sur mobile */}
               <div className="rounded-3xl overflow-hidden border bg-white aspect-[3/2] sm:aspect-[4/3] shadow-[0_12px_30px_-10px_rgba(0,0,0,0.25)]">
                 <img
                   src="assets/banner-img-1.jpg"
                   onError={(e) => {
                     e.currentTarget.src = "assets/hero-banner.png";
                   }}
-                  alt="BanniÃ¨re"
+                  alt="Bannière"
                   className="w-full h-full object-cover"
                 />
               </div>
 
-              {/* pastille promo â€” garde-la dans la carte sur mobile */}
+              {/* pastille promo — garde-la dans la carte sur mobile */}
               <div className="absolute -top-3 right-2 sm:right-3 md:-right-3">
                 <div className="rounded-full bg-gradient-to-r from-amber-400 to-pink-500 text-white text-xs sm:text-sm font-semibold px-3 py-1.5 shadow-lg">
                   -20% cette semaine
@@ -99,9 +99,8 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Pense Ã  mettre overflow-x-auto dans BrandStrip si beaucoup de logos */}
+      {/* Pense à mettre overflow-x-auto dans BrandStrip si beaucoup de logos */}
       {/* <BrandStrip /> */}
     </section>
   );
 }
-

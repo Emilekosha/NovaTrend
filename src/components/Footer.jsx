@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-// Facile Ã  personnaliser ici
+// Facile à personnaliser ici
 const COMPANY = {
   name: "DemoShop",
   tagline: "Votre boutique en ligne",
@@ -34,19 +34,19 @@ export default function Footer() {
     { to: "/contact", label: "Contact" },
   ];
 
-  // ðŸ‘‰ liens vers de vraies pages (routes internes)
+  // 👉 liens vers de vraies pages (routes internes)
   const helpful = [
     { to: "/services", label: "Services" },
     { to: "/support", label: "Support" },
-    { to: "/terms", label: "Conditions dâ€™utilisation" },
-    { to: "/privacy", label: "Politique de confidentialitÃ©" },
+    { to: "/terms", label: "Conditions d’utilisation" },
+    { to: "/privacy", label: "Politique de confidentialité" },
   ];
 
   function onSubscribe(e) {
     e.preventDefault();
     const email = new FormData(e.currentTarget).get("email");
     if (!email) return;
-    alert(`Merci ! Nous vous Ã©crirons Ã  ${email}.`);
+    alert(`Merci ! Nous vous écrirons à ${email}.`);
     e.currentTarget.reset();
   }
 
@@ -55,7 +55,7 @@ export default function Footer() {
       {/* bloc principal */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-12">
-          {/* Col 1 : Branding / Ã€ propos / Contact */}
+          {/* Col 1 : Branding / À propos / Contact */}
           <div>
             <div className="flex items-center gap-2">
               <img
@@ -68,28 +68,28 @@ export default function Footer() {
             </div>
             <p className="mt-1 text-xs text-gray-400">{COMPANY.tagline}</p>
 
-            <h3 className="mt-6 text-amber-500 font-semibold">Ã€ propos</h3>
+            <h3 className="mt-6 text-amber-500 font-semibold">À propos</h3>
             <p className="mt-2 text-sm text-gray-400 leading-relaxed max-w-prose">
-              Nous aidons nos clients Ã  trouver les meilleurs produits au meilleur prix,
-              avec un service rapide et de qualitÃ©.
+              Nous aidons nos clients à trouver les meilleurs produits au meilleur prix,
+              avec un service rapide et de qualité.
             </p>
 
             <h4 className="mt-6 text-amber-500 font-semibold">Nous contacter</h4>
             <ul className="mt-2 space-y-2 text-sm">
               <li>
                 <a href={`tel:${COMPANY.phone}`} className="hover:text-white inline-flex items-center gap-2">
-                  <span className="inline-grid place-items-center h-6 w-6 rounded bg-amber-600/20 text-amber-500">â˜Ž</span>
+                  <span className="inline-grid place-items-center h-6 w-6 rounded bg-amber-600/20 text-amber-500">☎</span>
                   {COMPANY.phoneDisplay}
                 </a>
               </li>
               <li>
                 <a href={`mailto:${COMPANY.email}`} className="hover:text-white inline-flex items-center gap-2">
-                  <span className="inline-grid place-items-center h-6 w-6 rounded bg-amber-600/20 text-amber-500">âœ‰</span>
+                  <span className="inline-grid place-items-center h-6 w-6 rounded bg-amber-600/20 text-amber-500">✉</span>
                   {COMPANY.email}
                 </a>
               </li>
               <li className="text-gray-400 flex items-center gap-2">
-                <span className="inline-grid place-items-center h-6 w-6 rounded bg-amber-600/20 text-amber-500">ðŸ“</span>
+                <span className="inline-grid place-items-center h-6 w-6 rounded bg-amber-600/20 text-amber-500">📍</span>
                 {COMPANY.address}
               </li>
             </ul>
@@ -121,7 +121,7 @@ export default function Footer() {
 
           {/* Col 4 : Newsletter */}
           <div>
-            <h3 className="text-amber-500 font-semibold">Sâ€™abonner pour plus dâ€™infos</h3>
+            <h3 className="text-amber-500 font-semibold">S’abonner pour plus d’infos</h3>
             <form onSubmit={onSubscribe} className="mt-3">
               <div className="flex flex-col sm:flex-row gap-3">
                 <label htmlFor="footer-email" className="sr-only">Email</label>
@@ -135,21 +135,21 @@ export default function Footer() {
                 />
                 <button
                   className="rounded-lg bg-amber-500 px-4 py-2 text-sm font-semibold text-black hover:bg-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-400"
-                  aria-label="Sâ€™abonner"
+                  aria-label="S’abonner"
                 >
-                  Sâ€™abonner
+                  S’abonner
                 </button>
               </div>
             </form>
           </div>
         </div>
 
-        {/* sÃ©parateur */}
+        {/* séparateur */}
         <hr className="mt-10 border-t border-white/10" />
 
         {/* bas de page */}
         <div className="mt-6 flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
-          {/* rÃ©seaux sociaux */}
+          {/* réseaux sociaux */}
           <div className="flex items-center gap-3">
             {[
               { href: "https://facebook.com", label: "Facebook", icon: "f" },
@@ -172,7 +172,7 @@ export default function Footer() {
 
           {/* copyright */}
           <div className="text-xs text-gray-400 text-center sm:text-right sm:flex-1">
-            Â© {new Date().getFullYear()} {COMPANY.name}. Tous droits rÃ©servÃ©s.
+            © {new Date().getFullYear()} {COMPANY.name}. Tous droits réservés.
           </div>
 
           {/* back to top */}
@@ -182,11 +182,10 @@ export default function Footer() {
             aria-label="Retour en haut"
             title="Retour en haut"
           >
-            â†‘
+            ↑
           </button>
         </div>
       </div>
     </footer>
   );
 }
-

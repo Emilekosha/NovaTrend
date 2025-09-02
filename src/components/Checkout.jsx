@@ -4,9 +4,12 @@ import { createOrder } from "../services/orders.js";
 import { useCart } from "../context/CartContext.jsx";
 
 export default function Checkout() {
-  const { items, cartTotal, clearCart } = useCart(); // nÃ©cessite que items soit exposÃ© par CartContext
+  const { items, cartTotal, clearCart } = useCart(); // nécessite que items soit exposé par CartContext
   const navigate = useNavigate();
-  const fmt = new Intl.NumberFormat("fr-FR", { style: "currency", currency: "EUR" });
+  const fmt = new Intl.NumberFormat("fr-FR", {
+    style: "currency",
+    currency: "EUR",
+  });
 
   const [method, setMethod] = React.useState("card"); // 'card' | 'mobile' | 'cod'
   const [processing, setProcessing] = React.useState(false);
@@ -26,20 +29,24 @@ export default function Checkout() {
     const form = new FormData(e.currentTarget);
     const name = form.get("name") || "client";
 
-    // Validation spÃ©cifique Mobile Money
+    // Validation spécifique Mobile Money
     if (method === "mobile") {
       const phone = (form.get("walletPhone") || "").trim();
       if (!phone) {
-        alert("Merci dâ€™indiquer le numÃ©ro Mobile Money.");
+        alert("Merci d’indiquer le numéro Mobile Money.");
         setProcessing(false);
         return;
       }
     }
 
-    // Construire et enregistrer la commande (dÃ©mo: localStorage)
+    // Construire et enregistrer la commande (démo : localStorage)
     const order = createOrder({
       items: (items || []).map(({ id, title, price, image, qty }) => ({
-        id, title, price, image, qty,
+        id,
+        title,
+        price,
+        image,
+        qty,
       })),
       amount: cartTotal,
       currency: "EUR",
@@ -55,7 +62,7 @@ export default function Checkout() {
         country: form.get("country"),
       },
       note: form.get("note") || "",
-      paymentRef: undefined, // Ã  renseigner si tu branches Stripe/PayPal/etc.
+      paymentRef: undefined, // à renseigner si tu branches Stripe/PayPal/etc.
     });
 
     clearCart();
@@ -80,7 +87,7 @@ export default function Checkout() {
             </span>
           </h1>
           <p className="mt-1 text-gray-600">
-            Finalisez votre commande en toute sÃ©curitÃ©.
+            Finalisez votre commande en toute sécurité.
           </p>
 
           <form onSubmit={onSubmit} className="mt-6 space-y-6">
@@ -93,10 +100,15 @@ export default function Checkout() {
             <div className="grid md:grid-cols-2 gap-4">
               <div>
                 <label className="block text-sm mb-1">Email</label>
-                <input type="email" name="email" className={inputBase} required />
+                <input
+                  type="email"
+                  name="email"
+                  className={inputBase}
+                  required
+                />
               </div>
               <div>
-                <label className="block text-sm mb-1">TÃ©lÃ©phone</label>
+                <label className="block text-sm mb-1">Téléphone</label>
                 <input name="phone" className={inputBase} inputMode="tel" />
               </div>
             </div>
@@ -118,22 +130,44 @@ export default function Checkout() {
               </div>
               <div>
                 <label className="block text-sm mb-1">Pays</label>
-                <input name="country" defaultValue="France" className={inputBase} required />
+                <input
+                  name="country"
+                  defaultValue="France"
+                  className={inputBase}
+                  required
+                />
               </div>
             </div>
 
             {/* Note (optionnelle) */}
             <div>
               <label className="block text-sm mb-1">Note (optionnel)</label>
-              <textarea name="note" rows={3} className={inputBase} placeholder="Infos de livraison, interphone, etc." />
+              <textarea
+                name="note"
+                rows={3}
+                className={inputBase}
+                placeholder="Infos de livraison, interphone, etc."
+              />
             </div>
 
-            {/* SÃ©lecteur de mÃ©thode */}
+            {/* Sélecteur de méthode */}
             <fieldset className="grid gap-3 sm:grid-cols-3">
               {[
-                { id: "card", title: "Carte bancaire", note: "Visa/Mastercard (dÃ©mo)" },
-                { id: "mobile", title: "Mobile Money", note: "MTN / Orange / Airtel / Wave" },
-                { id: "cod", title: "Ã€ la livraison", note: "EspÃ¨ces / TPV au livreur" },
+                {
+                  id: "card",
+                  title: "Carte bancaire",
+                  note: "Visa/Mastercard (démo)",
+                },
+                {
+                  id: "mobile",
+                  title: "Mobile Money",
+                  note: "MTN / Orange / Airtel / Wave",
+                },
+                {
+                  id: "cod",
+                  title: "À la livraison",
+                  note: "Espèces / TPV au livreur",
+                },
               ].map((m) => {
                 const selected =
                   method === m.id
@@ -144,7 +178,10 @@ export default function Checkout() {
                       : "border-orange-600 ring-2 ring-orange-600/20"
                     : "hover:shadow-sm";
                 return (
-                  <label key={m.id} className={`${box} cursor-pointer transition ${selected}`}>
+                  <label
+                    key={m.id}
+                    className={`${box} cursor-pointer transition ${selected}`}
+                  >
                     <div className="flex items-start gap-3">
                       <input
                         type="radio"
@@ -168,25 +205,45 @@ export default function Checkout() {
             {method === "card" && (
               <div className={`${box} border-sky-100`}>
                 <div className="flex items-center justify-between">
-                  <h2 className="text-lg font-semibold text-sky-800">Paiement par carte</h2>
+                  <h2 className="text-lg font-semibold text-sky-800">
+                    Paiement par carte
+                  </h2>
                   <div className="hidden sm:flex gap-1 text-xs">
-                    <span className="inline-flex rounded border border-sky-200 bg-sky-50 text-sky-700 px-2 py-1">VISA</span>
-                    <span className="inline-flex rounded border border-orange-200 bg-orange-50 text-orange-700 px-2 py-1">MC</span>
+                    <span className="inline-flex rounded border border-sky-200 bg-sky-50 text-sky-700 px-2 py-1">
+                      VISA
+                    </span>
+                    <span className="inline-flex rounded border border-orange-200 bg-orange-50 text-orange-700 px-2 py-1">
+                      MC
+                    </span>
                   </div>
                 </div>
                 <div className="mt-3 grid md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm mb-1">NumÃ©ro de carte (dÃ©mo)</label>
-                    <input className={inputBase} name="card" placeholder="4242 4242 4242 4242" />
+                    <label className="block text-sm mb-1">
+                      Numéro de carte (démo)
+                    </label>
+                    <input
+                      className={inputBase}
+                      name="card"
+                      placeholder="4242 4242 4242 4242"
+                    />
                   </div>
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm mb-1">Expiration</label>
-                      <input className={inputBase} name="exp" placeholder="12/26" />
+                      <input
+                        className={inputBase}
+                        name="exp"
+                        placeholder="12/26"
+                      />
                     </div>
                     <div>
                       <label className="block text-sm mb-1">CVC</label>
-                      <input className={inputBase} name="cvc" placeholder="123" />
+                      <input
+                        className={inputBase}
+                        name="cvc"
+                        placeholder="123"
+                      />
                     </div>
                   </div>
                 </div>
@@ -196,19 +253,32 @@ export default function Checkout() {
             {/* Bloc Mobile Money */}
             {method === "mobile" && (
               <div className={`${box} border-amber-200`}>
-                <h2 className="text-lg font-semibold text-amber-700">Paiement Mobile Money</h2>
-                <p className="text-sm text-gray-600">Nous vous enverrons une demande de paiement sur votre portefeuille.</p>
+                <h2 className="text-lg font-semibold text-amber-700">
+                  Paiement Mobile Money
+                </h2>
+                <p className="text-sm text-gray-600">
+                  Nous vous enverrons une demande de paiement sur votre
+                  portefeuille.
+                </p>
                 <div className="mt-3 grid md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm mb-1">OpÃ©rateur</label>
-                    <select name="walletProvider" className={inputBase} defaultValue="MTN">
+                    <label className="block text-sm mb-1">Opérateur</label>
+                    <select
+                      name="walletProvider"
+                      className={inputBase}
+                      defaultValue="MTN"
+                    >
                       {["MTN", "Orange", "Airtel", "Wave", "Autre"].map((o) => (
-                        <option key={o} value={o}>{o}</option>
+                        <option key={o} value={o}>
+                          {o}
+                        </option>
                       ))}
                     </select>
                   </div>
                   <div>
-                    <label className="block text-sm mb-1">NumÃ©ro de portefeuille</label>
+                    <label className="block text-sm mb-1">
+                      Numéro de portefeuille
+                    </label>
                     <input
                       name="walletPhone"
                       className={inputBase}
@@ -218,17 +288,24 @@ export default function Checkout() {
                     />
                   </div>
                 </div>
-                <p className="mt-2 text-xs text-gray-500">DÃ©mo : pas de transaction rÃ©elle.</p>
+                <p className="mt-2 text-xs text-gray-500">
+                  Démo : pas de transaction réelle.
+                </p>
               </div>
             )}
 
             {/* Bloc COD */}
             {method === "cod" && (
               <div className={`${box} border-orange-200`}>
-                <h2 className="text-lg font-semibold text-orange-700">Paiement Ã  la livraison</h2>
-                <p className="text-sm text-gray-600">RÃ©glez votre commande au livreur (espÃ¨ces ou terminal bancaire).</p>
+                <h2 className="text-lg font-semibold text-orange-700">
+                  Paiement à la livraison
+                </h2>
+                <p className="text-sm text-gray-600">
+                  Réglez votre commande au livreur (espèces ou terminal
+                  bancaire).
+                </p>
                 <ul className="mt-3 list-disc pl-5 text-sm text-gray-700 space-y-1">
-                  <li>VÃ©rifiez lâ€™adresse et le tÃ©lÃ©phone.</li>
+                  <li>Vérifiez l’adresse et le téléphone.</li>
                   <li>Le livreur vous contactera avant la remise du colis.</li>
                 </ul>
               </div>
@@ -240,15 +317,26 @@ export default function Checkout() {
                 type="submit"
                 disabled={disabled}
                 className={`inline-flex items-center justify-center rounded-2xl px-5 py-3 text-white transition
-                  ${disabled ? "bg-gray-400" : "bg-gradient-to-r from-sky-600 via-amber-500 to-orange-600 hover:opacity-95"}`}
+                  ${
+                    disabled
+                      ? "bg-gray-400"
+                      : "bg-gradient-to-r from-sky-600 via-amber-500 to-orange-600 hover:opacity-95"
+                  }`}
                 aria-disabled={disabled}
               >
-                {processing ? "Traitementâ€¦" : cartTotal > 0 ? "Valider la commande" : "Panier vide"}
+                {processing
+                  ? "Traitement…"
+                  : cartTotal > 0
+                  ? "Valider la commande"
+                  : "Panier vide"}
               </button>
 
               <div className="inline-flex items-center gap-2 rounded-full border px-3 py-1 text-sm">
                 <span className="inline-block h-2 w-2 rounded-full bg-gradient-to-r from-sky-500 via-amber-400 to-orange-500" />
-                Total : <strong className="text-sky-800">{fmt.format(cartTotal)}</strong>
+                Total :{" "}
+                <strong className="text-sky-800">
+                  {fmt.format(cartTotal)}
+                </strong>
               </div>
             </div>
           </form>
@@ -257,4 +345,3 @@ export default function Checkout() {
     </div>
   );
 }
-

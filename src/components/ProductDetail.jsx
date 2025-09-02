@@ -9,11 +9,20 @@ function Stars({ value = 0 }) {
   const rounded = Math.round(value);
   return (
     <span className="text-amber-500 text-sm" aria-label={`${value}/5`}>
-      {"â˜…".repeat(rounded)}
-      <span className="text-gray-300">{"â˜…".repeat(5 - rounded)}</span>
+      {"★".repeat(rounded)}
+      <span className="text-gray-300">{"★".repeat(5 - rounded)}</span>
     </span>
   );
 }
+
+// ➜ Normalise un chemin vers le bon sous-dossier (BASE_URL) et enlève les "/" initiaux
+const withBase = (p) => {
+  if (!p) return p;
+  if (/^https?:\/\//i.test(p)) return p;
+  const clean = String(p).replace(/^\/+/, ""); // enlève les slashes de tête
+  // BASE_URL finit déjà par "/"
+  return `${import.meta.env.BASE_URL}${clean}`;
+};
 
 export default function ProductDetail() {
   const { id } = useParams();
@@ -42,21 +51,23 @@ export default function ProductDetail() {
           onClick={() => navigate("/shop")}
           className="rounded-2xl border px-4 py-2"
         >
-          Retour Ã  la boutique
+          Retour à la boutique
         </button>
       </div>
     );
   }
 
-  // Galerie : si product.images existe on lâ€™utilise, sinon on rÃ©pÃ¨te lâ€™image principale
-  const gallery =
+  // Si product.images existe on l’utilise, sinon on répète l’image principale
+  const rawGallery =
     Array.isArray(product.images) && product.images.length
       ? product.images
       : [product.image, product.image, product.image, product.image];
 
+  // ➜ Résout tous les chemins avec la base
+  const gallery = rawGallery.map(withBase);
+
   const setFallback = (e) => {
-    // image de secours si la source casse
-    e.currentTarget.src = "assets/hero-banner.png";
+    e.currentTarget.src = withBase("assets/hero-banner.png");
   };
 
   const dec = () => setQty((q) => Math.max(1, q - 1));
@@ -81,10 +92,10 @@ export default function ProductDetail() {
             <button
               onClick={() => setActive((i) => Math.max(0, i - 1))}
               className="rounded-xl border px-3 py-2 text-gray-600 hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
-              aria-label="Image prÃ©cÃ©dente"
+              aria-label="Image précédente"
               disabled={active === 0}
             >
-              â€¹
+              ‹
             </button>
 
             <div className="flex-1 overflow-x-auto">
@@ -118,7 +129,7 @@ export default function ProductDetail() {
               aria-label="Image suivante"
               disabled={active === gallery.length - 1}
             >
-              â€º
+              ›
             </button>
           </div>
         </div>
@@ -143,16 +154,16 @@ export default function ProductDetail() {
             {product.description}
           </p>
 
-          {/* QuantitÃ© + actions */}
+          {/* Quantité + actions */}
           <div className="mt-6 flex flex-wrap items-stretch gap-3">
             <div className="inline-flex items-center rounded-xl border">
               <button
                 onClick={dec}
                 className="px-3 py-3 text-gray-700 hover:bg-gray-50"
-                aria-label="Diminuer la quantitÃ©"
+                aria-label="Diminuer la quantité"
                 type="button"
               >
-                âˆ’
+                −
               </button>
               <input
                 type="number"
@@ -164,12 +175,12 @@ export default function ProductDetail() {
                   setQty(Math.max(1, parseInt(e.target.value || "1", 10)))
                 }
                 className="w-16 text-center border-x px-2 py-3"
-                aria-label="QuantitÃ©"
+                aria-label="Quantité"
               />
               <button
                 onClick={inc}
                 className="px-3 py-3 text-gray-700 hover:bg-gray-50"
-                aria-label="Augmenter la quantitÃ©"
+                aria-label="Augmenter la quantité"
                 type="button"
               >
                 +
@@ -204,12 +215,12 @@ export default function ProductDetail() {
               title={
                 isInWishlist(product.id)
                   ? "Retirer de ma liste"
-                  : "Ajouter Ã  ma liste"
+                  : "Ajouter à ma liste"
               }
             >
               {isInWishlist(product.id)
-                ? "âœ“ Dans ma liste"
-                : "â™¡ Ajouter Ã  la liste"}
+                ? "✓ Dans ma liste"
+                : "♡ Ajouter à la liste"}
             </button>
 
             {/* Compare */}
@@ -225,18 +236,18 @@ export default function ProductDetail() {
               aria-pressed={inCompare(product.id)}
               title={
                 inCompare(product.id)
-                  ? "DÃ©jÃ  dans la comparaison"
-                  : "Ajouter Ã  la comparaison"
+                  ? "Déjà dans la comparaison"
+                  : "Ajouter à la comparaison"
               }
             >
-              â‡„ {inCompare(product.id) ? "Dans la comparaison" : "Comparer"}
+              ↔ {inCompare(product.id) ? "Dans la comparaison" : "Comparer"}
             </button>
           </div>
 
           {/* Meta */}
           <div className="mt-6 space-y-2 text-sm text-gray-600">
             <div>
-              <span className="font-medium text-gray-800">CatÃ©gories :</span>{" "}
+              <span className="font-medium text-gray-800">Catégories :</span>{" "}
               {product.category}
             </div>
             <div>
@@ -246,18 +257,10 @@ export default function ProductDetail() {
             </div>
             <div className="flex items-center gap-3">
               <span className="font-medium text-gray-800">Partager :</span>
-              <a href="#" className="hover:underline" aria-label="Facebook">
-                f
-              </a>
-              <a href="#" className="hover:underline" aria-label="Twitter/X">
-                x
-              </a>
-              <a href="#" className="hover:underline" aria-label="Pinterest">
-                p
-              </a>
-              <a href="#" className="hover:underline" aria-label="LinkedIn">
-                in
-              </a>
+              <a href="#" className="hover:underline" aria-label="Facebook">f</a>
+              <a href="#" className="hover:underline" aria-label="Twitter/X">x</a>
+              <a href="#" className="hover:underline" aria-label="Pinterest">p</a>
+              <a href="#" className="hover:underline" aria-label="LinkedIn">in</a>
             </div>
           </div>
         </div>
@@ -297,19 +300,19 @@ export default function ProductDetail() {
             <p>
               {product.description} Lorem ipsum dolor sit amet, consectetur
               adipiscing elit. Donec non est at libero vulputate rutrum.
-              Pellentesque aliquet, sem eget laoreet ultricesâ€¦
+              Pellentesque aliquet, sem eget laoreet ultrices…
             </p>
           </div>
         ) : (
           <div className="mt-6 text-gray-700">
             <p className="text-sm">
-              <strong>Jean</strong> â€” â˜…â˜…â˜…â˜…â˜† : TrÃ¨s bonnes chaussures, taille
+              <strong>Jean</strong> — ★★★★☆ : Très bonnes chaussures, taille
               bien.
             </p>
             <form
               onSubmit={(e) => {
                 e.preventDefault();
-                alert("Merci pour votre avis (dÃ©mo).");
+                alert("Merci pour votre avis (démo).");
               }}
               className="mt-4 space-y-3 max-w-md"
             >
@@ -317,11 +320,11 @@ export default function ProductDetail() {
               <textarea
                 rows={4}
                 className="w-full rounded-xl border px-3 py-2"
-                placeholder="Ã‰crivez votre commentaireâ€¦"
+                placeholder="Écrivez votre commentaire…"
                 required
               />
               <button className="rounded-xl border px-4 py-2 hover:shadow-sm">
-                Envoyer (dÃ©mo)
+                Envoyer (démo)
               </button>
             </form>
           </div>
@@ -330,4 +333,3 @@ export default function ProductDetail() {
     </div>
   );
 }
-

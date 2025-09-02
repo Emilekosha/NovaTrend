@@ -6,8 +6,8 @@ function Stars({ value = 0 }) {
   const full = Math.round(value)
   return (
     <span aria-label={`${value}/5`} className="text-[11px] leading-none select-none">
-      <span className="text-amber-500">{'â˜…'.repeat(full)}</span>
-      <span className="text-gray-300">{'â˜…'.repeat(5 - full)}</span>
+      <span className="text-amber-500">{'★'.repeat(full)}</span>
+      <span className="text-gray-300">{'★'.repeat(5 - full)}</span>
     </span>
   )
 }
@@ -18,7 +18,7 @@ export default function ProductCard({ product }) {
 
   return (
     <article className="group rounded-3xl border border-slate-200 bg-white shadow-sm hover:shadow-md transition-shadow">
-      {/* liserÃ© bleu plein en haut */}
+      {/* liseré bleu plein en haut */}
       <div className="h-1 w-full bg-sky-600" />
 
       {/* IMAGE */}
@@ -50,14 +50,14 @@ export default function ProductCard({ product }) {
               {product.title}
             </Link>
           </h3>
-          {/* Ã‰TOILES / NOTE */}
+          {/* ÉTOILES / NOTE */}
           <div className="flex items-center gap-1">
             <Stars value={product.rating} />
             <span className="text-xs text-gray-500">({product.rating})</span>
           </div>
         </div>
 
-        {/* CATÃ‰GORIE (puce colorÃ©e) */}
+        {/* CATÉGORIE (puce colorée) */}
         <div className="mt-1">
           <span className="inline-flex items-center gap-1 rounded-full bg-white px-2 py-1 text-xs text-gray-600 border border-slate-200">
             <span className="inline-block h-2 w-2 rounded-full bg-orange-500" />
@@ -77,15 +77,14 @@ export default function ProductCard({ product }) {
 
           <Link
             to={`/product/${product.id}`}
-            title="Voir le dÃ©tail"
-            aria-label={`DÃ©tail de ${product.title}`}
+            title="Voir le détail"
+            aria-label={`Détail de ${product.title}`}
             className="rounded-2xl border border-slate-200 px-3 py-2 text-sky-700 hover:border-sky-300 focus:outline-none focus:ring-2 focus:ring-sky-300"
           >
-            â†’
+            →
           </Link>
         </div>
       </div>
     </article>
   )
 }
-

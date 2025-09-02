@@ -39,7 +39,7 @@ export default function App() {
           <Route path="/wishlist" element={<Wishlist />} />
           <Route path="/compare" element={<Compare />} />
           <Route path="/merci/:id" element={<ThankYou />} />
-           <Route path="/admin/orders" element={<OrdersAdmin />} />
+          <Route path="/admin/orders" element={<OrdersAdmin />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
@@ -47,4 +47,3 @@ export default function App() {
     </div>
   );
 }
-
